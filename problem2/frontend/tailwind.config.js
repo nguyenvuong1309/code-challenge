@@ -1,0 +1,171 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        // Liquid Neomorphism + Cyberpunk 2025 Color System
+        'neo-dark': {
+          'base': '#0A0A0B',
+          'elevated': '#111114', 
+          'container': '#1A1A1D',
+          'surface': '#1E1E22',
+          'surface-2': '#252529',
+          'surface-3': '#2A2A2F',
+        },
+        'neon': {
+          'cyan': {
+            DEFAULT: '#00F5FF',
+            '50': '#E6FEFF',
+            '100': '#B3FDFF', 
+            '200': '#80FCFF',
+            '300': '#4DFBFF',
+            '400': '#1AF9FF',
+            '500': '#00F5FF',
+            '600': '#00C2CC',
+            '700': '#008F99',
+            '800': '#005C66',
+            '900': '#002933',
+          },
+          'purple': {
+            DEFAULT: '#8A2BE2',
+            '50': '#F4ECFF',
+            '100': '#E1C7FF',
+            '200': '#CFA2FF', 
+            '300': '#BC7DFF',
+            '400': '#A958FF',
+            '500': '#8A2BE2',
+            '600': '#6E22B5',
+            '700': '#521A88',
+            '800': '#36115B',
+            '900': '#1A082E',
+          },
+          'gold': {
+            DEFAULT: '#FFD700',
+            '50': '#FFFEF0',
+            '100': '#FFFBD1',
+            '200': '#FFF8B3',
+            '300': '#FFF594',
+            '400': '#FFF176',
+            '500': '#FFD700',
+            '600': '#CCAC00',
+            '700': '#998100',
+            '800': '#665600',
+            '900': '#332B00',
+          },
+        },
+        'grid': {
+          'cyan': 'rgba(0, 245, 255, 0.1)',
+          'purple': 'rgba(138, 43, 226, 0.15)',
+          'gold': 'rgba(255, 215, 0, 0.08)',
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        'neo': '20px',
+        'liquid': '24px',
+        'organic': '30px',
+      },
+      boxShadow: {
+        'neo-inset': 'inset 8px 8px 16px rgba(10, 10, 11, 0.8), inset -8px -8px 16px rgba(42, 42, 47, 0.3)',
+        'neo-outset': '8px 8px 16px rgba(10, 10, 11, 0.8), -8px -8px 16px rgba(42, 42, 47, 0.3)',
+        'neo-pressed': 'inset 4px 4px 8px rgba(10, 10, 11, 0.6), inset -4px -4px 8px rgba(42, 42, 47, 0.2)',
+        'neon-glow': '0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.1)',
+        'neon-glow-purple': '0 0 20px rgba(138, 43, 226, 0.3), 0 0 40px rgba(138, 43, 226, 0.1)',
+        'neon-glow-gold': '0 0 20px rgba(255, 215, 0, 0.3), 0 0 40px rgba(255, 215, 0, 0.1)',
+        'depth-1': '0 2px 8px rgba(10, 10, 11, 0.4), 0 8px 24px rgba(10, 10, 11, 0.2)',
+        'depth-2': '0 4px 16px rgba(10, 10, 11, 0.5), 0 16px 32px rgba(10, 10, 11, 0.3)',
+        'depth-3': '0 8px 32px rgba(10, 10, 11, 0.6), 0 24px 48px rgba(10, 10, 11, 0.4)',
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "liquid-morph": {
+          "0%, 100%": { borderRadius: "20px" },
+          "25%": { borderRadius: "25px 15px 20px 30px" },
+          "50%": { borderRadius: "15px 30px 25px 20px" },
+          "75%": { borderRadius: "30px 20px 15px 25px" },
+        },
+        "neon-pulse": {
+          "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.02)" },
+        },
+        "grid-flow": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+        "particle-float": {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)", opacity: "0.6" },
+          "25%": { transform: "translate(10px, -15px) rotate(90deg)", opacity: "0.8" },
+          "50%": { transform: "translate(20px, -5px) rotate(180deg)", opacity: "0.4" },
+          "75%": { transform: "translate(5px, -25px) rotate(270deg)", opacity: "0.7" },
+        },
+        "holographic": {
+          "0%": { backgroundPosition: "0% 0%" },
+          "25%": { backgroundPosition: "100% 0%" },
+          "50%": { backgroundPosition: "100% 100%" },
+          "75%": { backgroundPosition: "0% 100%" },
+          "100%": { backgroundPosition: "0% 0%" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "liquid-morph": "liquid-morph 8s ease-in-out infinite",
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "grid-flow": "grid-flow 20s linear infinite",
+        "particle-float": "particle-float 12s ease-in-out infinite",
+        "holographic": "holographic 6s ease-in-out infinite",
+      },
+      fontFamily: {
+        'variable': ['Inter Variable', 'system-ui', 'sans-serif'],
+        'mono': ['JetBrains Mono', 'Consolas', 'monospace'],
+      },
+    },
+  },
+  plugins: [],
+}
